@@ -38,7 +38,7 @@ public class DatabaseConfiguration extends AbstractMongoConfiguration {
 	private String authenticationDatabase;
 
 	@Override
-	protected String getDatabaseName() {
+	public String getDatabaseName() {
 		return database;
 	}
 	
