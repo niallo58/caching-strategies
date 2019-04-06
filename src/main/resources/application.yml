@@ -36,6 +36,6 @@ spring:
     allow-bean-definition-overriding: true    
       
 redis:
-  hostname: 127.0.0.1
+  hostname: localhost
   port: 6379
   ttl: 300000

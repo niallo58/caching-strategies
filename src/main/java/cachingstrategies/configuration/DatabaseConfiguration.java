@@ -16,7 +16,7 @@ import com.mongodb.MongoCredential;
 import com.mongodb.ServerAddress;
 
 @Configuration
-@EnableMongoRepositories("cachingstratagies.repositories")
+@EnableMongoRepositories("cachingstrategies.repositories")
 public class DatabaseConfiguration extends AbstractMongoConfiguration {
 	
 	@Value("${spring.data.mongodb.database}")
@@ -51,12 +51,10 @@ public class DatabaseConfiguration extends AbstractMongoConfiguration {
             seeds.add(new ServerAddress(ip.trim(), port));
 		}
 		if(!StringUtils.isBlank(username) && !StringUtils.isBlank(password)) {
-//			return MongoClients.create("mongodb://" + username + ":" + password + "@" + host + ":" + port + "/" + database);
 			MongoCredential userCredential = MongoCredential.createCredential(username, authenticationDatabase,
 					password.toCharArray());
 			return new MongoClient(seeds, userCredential, new MongoClientOptions.Builder().build());
 		} else {
-//			return MongoClients.create("mongodb://" + host + ":" + port + "/" + database);
 			return new MongoClient(seeds);
 		}
 	}

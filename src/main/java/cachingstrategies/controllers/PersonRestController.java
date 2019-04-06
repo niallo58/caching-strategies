@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import cachingstrategies.exceptions.ObjectNotFoundException;
 import cachingstrategies.models.Person;
 import cachingstrategies.services.PersonService;
 
@@ -28,7 +29,7 @@ public class PersonRestController {
 	}
 	
 	@GetMapping(value = "/getById/{id}")
-	public Person getById(@PathVariable String id) {
+	public Person getById(@PathVariable String id) throws ObjectNotFoundException {
 		log.info("Hit getById successfully");
 		return personService.getById(id);
 	}

@@ -4,16 +4,14 @@ import java.io.Serializable;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-import org.springframework.data.redis.core.RedisHash;
 
 @Document
-@RedisHash("Person")
 public class Person implements Serializable {
 
 	private static final long serialVersionUID = 1603714798906422731L;
 
 	@Id
-	private Integer id;
+	private String id;
 	
 	private String firstName;
 	
@@ -21,10 +19,10 @@ public class Person implements Serializable {
 	
 	private int age;
 	
-	public Integer getId() {
+	public String getId() {
 		return id;
 	}
-	public void setId(Integer id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 	public String getFirstName() {

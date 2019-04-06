@@ -2,16 +2,16 @@ package cachingstrategies.services;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 import javax.annotation.Resource;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.mongodb.core.MongoTemplate;
-import org.springframework.data.mongodb.core.query.Criteria;
-import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.redis.core.HashOperations;
 import org.springframework.stereotype.Service;
 
+import cachingstrategies.exceptions.ObjectNotFoundException;
 import cachingstrategies.models.Person;
 import cachingstrategies.repositories.PersonRepository;
 
@@ -21,45 +21,45 @@ public class PersonService {
 	@Autowired
 	private PersonRepository personRepo;
 	
-	@Autowired
-	private MongoTemplate mongoTemplate;
-	
 	@Resource(name="redisTemplate")
-	private HashOperations<String, Integer, Person> hashOps;
+	private HashOperations<String, String, Person> hashOps;
 	
-	private static final String KEY = "people";
+	private static final String SINGLE_PERSON_KEY = "person";
+	private static final String ALL_PEOPLE_KEY = "people";
 	
 	public List<Person> getAll() {
 		List<Person> peopleList;
 		
-		Map<Integer, Person> peopleMap = hashOps.entries(KEY);
+		Map<String, Person> peopleMap = hashOps.entries(ALL_PEOPLE_KEY);
 		if(peopleMap.isEmpty()) {
 			peopleList = personRepo.findAll();
 			for(Person person : peopleList) {
-				hashOps.put(KEY, person.getId(), person);
+				hashOps.put(ALL_PEOPLE_KEY, person.getId(), person);
 			}
 		} else {
-			peopleList = (List<Person>) peopleMap.values();
+			peopleList = peopleMap.values().stream().collect(Collectors.toList());
 		}
 		
 		return peopleList;
 	}
 	
-	public Person getById(String id) {
-		Person person = hashOps.get(KEY, id);
-		
+	public Person getById(String id) throws ObjectNotFoundException {
+		Person person = hashOps.get(SINGLE_PERSON_KEY, id);
 		if(person == null) {
-			final Query query = new Query();
-			query.addCriteria(Criteria.where("id").is(id));
-			person = mongoTemplate.findOne(query, Person.class);
-			hashOps.put(KEY, person.getId(), person);
+			Optional<Person> optPerson = personRepo.findById(id);
+			if(optPerson.isPresent()) {
+				person = optPerson.get();
+				hashOps.put(SINGLE_PERSON_KEY, person.getId(), person);
+			} else {
+				throw new ObjectNotFoundException("Could not find Person in Redis or Database with id : " + id) ;
+			}
 		}
 		
 		return person;
 	}
 	
 	public Person save(Person person) {
-		hashOps.put(KEY, person.getId(), person);
+		hashOps.put(SINGLE_PERSON_KEY, person.getId(), person);
 		return personRepo.save(person);
 	}
 	
