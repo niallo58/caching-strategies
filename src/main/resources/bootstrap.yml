@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: template
+encrypt:
+  failOnError: false
+      
+---
+
+spring:
+  profiles: dev

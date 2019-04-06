@@ -1,0 +1,71 @@
+{
+	"vehicleTravelCriteria": {
+		"unlimitedMileageInd": null,
+		"bookingSource": {
+			"codeContext": null,
+			"value": null
+		},
+		"customerLoyalty": [],
+		"ratePeriod": null,
+		"permittedVendors": {
+			"vendor": [
+				{
+					"division": null,
+					"code": "UN",
+					"systemOfRecord": [],
+					"id": null,
+					"codeContext": null,
+					"value": null,
+					"shortName": null,
+					"department": null
+				}
+			]
+		},
+		"vehicleSearchModifiers": null,
+		"vehicleRateModifiers": null,
+		"rateGuaranteedInd": null,
+		"driverInfo": {
+			"countryOfDocIssue": "DE",
+			"age": 34
+		},
+		"prohibitedVendors": null,
+		"vehicleMakeModel": null,
+		"nextResultReference": null,
+		"vehicleDateLocation": {
+			"rentalPickup": {
+				"date": [
+					2019,
+					3,
+					19
+				],
+				"timeString": "1200",
+				"locationType": null,
+				"time": null,
+				"location": "SSA",
+				"value": null,
+				"locationNumber": null
+			},
+			"rentalReturn": {
+				"date": [
+					2019,
+					3,
+					21
+				],
+				"timeString": "1600",
+				"locationType": null,
+				"time": null,
+				"location": "SSA",
+				"value": null,
+				"locationNumber": null
+			},
+			"vendorLocation": []
+		},
+		"searchVehicleAttributes": null,
+		"currencyCode": null,
+		"rateCategoryCode": null,
+		"specialEquipment": []
+	},
+	"ploc": "SSA2",
+	"rloc": "SSA2",
+	"source": "{\"ISOCurrencyCode\":\"EUR\",\"ISOCountryCode\":\"DE\",\"RequestorType\":\"210\",\"RequestorIDContextCode\":\"MOBACAR\",\"RequestorID\":\"99015280\"}"
+}

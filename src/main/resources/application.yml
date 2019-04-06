@@ -1,0 +1,41 @@
+server:
+  port: 9003
+
+endpoints:
+  restart:
+    enabled: true
+  shutdown:
+    enabled: true
+  health:
+    sensitive: false
+    
+management:
+  security:
+    enabled: false
+  
+---
+  
+logging:
+  level: 
+    org.springframework.web: DEBUG
+    org.springframework.ws.client.MessageTracing.sent: TRACE
+    org.springframework.ws.server.MessageTracing.sent: TRACE
+    org.springframework.ws.client.MessageTracing.received: TRACE
+    org.springframework.ws.server.MessageTracing.received: TRACE
+    
+spring:
+  profiles: dev
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      username: 
+      password: 
+      database: personal
+  main:
+    allow-bean-definition-overriding: true    
+      
+redis:
+  hostname: 127.0.0.1
+  port: 6379
+  ttl: 300000

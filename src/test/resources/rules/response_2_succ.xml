@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope
+	xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<soap:Body>
+		<OtaVehAvailRateResponse
+			xmlns="http://www.unidas.com.br/">
+			<OtaVehAvailRateResult
+				xmlns="http://www.opentravel.org/OTA/2003/05" Version="0">
+				<Success />
+				<VehAvailRSCore>
+					<VehRentalCore PickUpDateTime="2019-01-21T12:00:00"
+						ReturnDateTime="2019-01-25T16:00:00">
+						<PickUpLocation LocationCode="SSA2" />
+						<ReturnLocation LocationCode="SSA2" />
+					</VehRentalCore>
+					<VehVendorAvails>
+						<VehVendorAvail>
+							<VehAvails>
+								<VehAvail>
+									<VehAvailCore Status="Available">
+										<Vehicle AirConditionInd="true" BaggageQuantity="3"
+											Code="CDMR" CodeContext="SIPP" PassengerQuantity="5">
+											<VehType VehicleCategory="E" />
+											<VehMakeModel Code="CDMR"
+												Name="Compacto - Ford Novo Ka, Citroen Novo C3 ou similares" />
+											<PictureURL>http://wbs.unidas.com.br/images/grupos/grupo_e.png
+											</PictureURL>
+										</Vehicle>
+										<RentalRate>
+											<RateDistance DistUnitName="Km" Unlimited="true" />
+											<VehicleCharges>
+												<VehicleCharge Amount="630.00"
+													CurrencyCode="BRL" GuaranteedInd="true" Purpose="1"
+													TaxInclusive="true">
+													<Calculation Quantity="4" UnitCharge="157.5"
+														UnitChargePer="0" UnitName="Day" />
+												</VehicleCharge>
+											</VehicleCharges>
+											<RateQualifier ArriveByFlight="false"
+												RateCategory="16" RateQualifier="24074" />
+										</RentalRate>
+										<TotalCharge CurrencyCode="BRL"
+											EstimatedTotalAmount="910.82" RateTotalAmount="630.00" />
+										<PricedEquips>
+											<PricedEquip Required="false">
+												<Equipment EquipType="13" Quantity="4">
+													<Description>GPS/13</Description>
+												</Equipment>
+												<Charge Amount="40.00" CurrencyCode="BRL"
+													IncludedInRate="false" TaxInclusive="false">
+													<Calculation Quantity="4,00" UnitCharge="10"
+														UnitChargePer="0" />
+												</Charge>
+											</PricedEquip>
+										</PricedEquips>
+										<Fees>
+											<Fee Amount="105.02" CurrencyCode="BRL"
+												Description="HORA EXTRA" Purpose="11" TaxInclusive="false">
+												<Calculation Quantity="4" UnitCharge="26.26"
+													UnitChargePer="0" UnitName="Hour" />
+											</Fee>
+											<Fee Amount="175.80" CurrencyCode="BRL"
+												Description="TAXA DE SERVIÇO" Purpose="7"
+												TaxInclusive="false">
+												<Calculation Percentage="12" UnitChargePer="0" />
+											</Fee>
+										</Fees>
+									</VehAvailCore>
+									<VehAvailInfo>
+										<PricedCoverages>
+											<PricedCoverage Required="false">
+												<Coverage CoverageType="61">
+													<Details CoverageTextType="Supplement">PROTEÇÃO OCUPANTES E
+														TERCEIROS</Details>
+													<Details CoverageTextType="Description">Garanta a cobertura para
+														danos corporais a ocupantes do veículo locado e de danos
+														materiais e corporais a terceiros por um valor especial.
+													</Details>
+												</Coverage>
+												<Charge Amount="45.00" IncludedInRate="false"
+													TaxInclusive="false">
+													<Calculation Quantity="5" UnitCharge="9"
+														UnitChargePer="0" UnitName="Day" />
+												</Charge>
+											</PricedCoverage>
+											<PricedCoverage Required="false">
+												<Coverage CoverageType="30">
+													<Details CoverageTextType="Supplement">PROTEÇÃO PARCIAL
+													</Details>
+													<Details CoverageTextType="Description">Inclui a proteção do
+														veículo locado para Furto, Roubo e Acidentes. Pague um
+														pequeno valor diário e garanta uma franquia/participação
+														adequada em caso de sinistro com o veículo locado.
+													</Details>
+												</Coverage>
+												<Charge Amount="175.00" IncludedInRate="false"
+													TaxInclusive="false">
+													<Calculation Quantity="5" UnitCharge="35"
+														UnitChargePer="0" UnitName="Day" />
+												</Charge>
+											</PricedCoverage>
+											<PricedCoverage Required="false">
+												<Coverage CoverageType="41">
+													<Details CoverageTextType="Supplement">PROTEÇÃO ESPECIAL
+													</Details>
+													<Details CoverageTextType="Description">Inclui a proteção do
+														veículo locado para Furto, Roubo e Acidentes. Reduza em
+														50% o valor da franquia/participação em caso de sinistro
+														com o veículo locado.</Details>
+												</Coverage>
+												<Charge Amount="225.00" IncludedInRate="false"
+													TaxInclusive="false">
+													<Calculation Quantity="5" UnitCharge="45"
+														UnitChargePer="0" UnitName="Day" />
+												</Charge>
+											</PricedCoverage>
+											<PricedCoverage Required="false">
+												<Coverage CoverageType="59">
+													<Details CoverageTextType="Supplement">PROTEÇÃO SUPER</Details>
+													<Details CoverageTextType="Description">A Proteção Super já
+														inclui a proteção do veículo locado para Furto, Roubo,
+														Acidentes, além das coberturas de danos corporais a
+														ocupantes do veículo locado e a para danos materiais e
+														corporais a terceiros.</Details>
+												</Coverage>
+												<Charge Amount="245.00" IncludedInRate="false"
+													TaxInclusive="false">
+													<Calculation Quantity="5" UnitCharge="49"
+														UnitChargePer="0" UnitName="Day" />
+												</Charge>
+											</PricedCoverage>
+										</PricedCoverages>
+									</VehAvailInfo>
+								</VehAvail>
+							</VehAvails>
+							<Info>
+								<OffLocServices>
+									<Charge Description="PREPAGAMENTO[E]">
+										<Calculation Total="617.40" UnitChargePer="0" />
+									</Charge>
+								</OffLocServices>
+								<LocationDetails Code="SSA2"
+									ExtendedLocationCode="" Name="AMARALINA">
+									<Address Remark="">
+										<AddressLine>AV AMARALINA</AddressLine>
+										<AddressLine>-13.0133242,-38.4707558</AddressLine>
+										<CityName>SALVADOR</CityName>
+										<PostalCode>41900020</PostalCode>
+										<StateProv StateCode="BA" />
+										<CountryName Code="BRA" />
+									</Address>
+									<Telephone PhoneNumber="7132404900" />
+									<AdditionalInfo>
+										<VehRentLocInfos>
+											<VehRentLocInfo Title="REDE_PROPRIA" Type="7" />
+										</VehRentLocInfos>
+										<OperationSchedules>
+											<OperationSchedule>
+												<OperationTimes>
+													<OperationTime End="16:45" Fri="true"
+														Mon="true" Start="08:00" Thur="true" Tue="true"
+														Weds="true" />
+													<OperationTime End="11:45" Sat="true"
+														Start="08:00" />
+												</OperationTimes>
+											</OperationSchedule>
+										</OperationSchedules>
+									</AdditionalInfo>
+								</LocationDetails>
+								<LocationDetails Code="SSA2"
+									ExtendedLocationCode="" Name="AMARALINA">
+									<Address Remark="">
+										<AddressLine>AV AMARALINA</AddressLine>
+										<AddressLine>-13.0133242,-38.4707558</AddressLine>
+										<CityName>SALVADOR</CityName>
+										<PostalCode>41900020</PostalCode>
+										<StateProv StateCode="BA" />
+										<CountryName Code="BRA" />
+									</Address>
+									<Telephone PhoneNumber="7132404900" />
+									<AdditionalInfo>
+										<VehRentLocInfos>
+											<VehRentLocInfo Title="REDE_PROPRIA" Type="7" />
+										</VehRentLocInfos>
+										<OperationSchedules>
+											<OperationSchedule>
+												<OperationTimes>
+													<OperationTime End="16:45" Fri="true"
+														Mon="true" Start="08:00" Thur="true" Tue="true"
+														Weds="true" />
+													<OperationTime End="11:45" Sat="true"
+														Start="08:00" />
+												</OperationTimes>
+											</OperationSchedule>
+										</OperationSchedules>
+									</AdditionalInfo>
+								</LocationDetails>
+							</Info>
+						</VehVendorAvail>
+					</VehVendorAvails>
+				</VehAvailRSCore>
+				<Warnings>
+					<Warning Code="9007" Type="3">Cálculo baseado na tarifa
+						Nacional. Para consulta ou novo acordo comercial, consulte o Depto
+						Comercial</Warning>
+					<Warning Code="9027" Type="3">Identificação do agenciador
+						incorreta. Favor contatar área comercial.</Warning>
+				</Warnings>
+			</OtaVehAvailRateResult>
+		</OtaVehAvailRateResponse>
+	</soap:Body>
+</soap:Envelope>
