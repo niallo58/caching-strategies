@@ -24,7 +24,7 @@ public class RedisCacheConfiguration  {
 	private int ttl;
 
 	@Bean
-	JedisConnectionFactory jedisConnectionFactory() {
+	public JedisConnectionFactory jedisConnectionFactory() {
 	    RedisStandaloneConfiguration redisStandaloneConfiguration = new RedisStandaloneConfiguration(redisHostname, redisPort);
 	    
 	    JedisClientConfigurationBuilder jedisClientConfiguration = JedisClientConfiguration.builder();
